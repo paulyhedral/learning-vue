@@ -1,0 +1,21 @@
+{
+    "name": "Cars",
+    "questions": [
+        {
+            "text": "What is your favorite car?",
+            "choices": [
+                { "text": "Corvette" },
+                { "text": "Mustang" },
+                { "text": "Camaro" }
+            ]
+        },
+        {
+            "text": "What is your second favorite car?",
+            "choices": [
+                { "text": "Corvette" },
+                { "text": "Mustang" },
+                { "text": "Camaro" }
+            ]
+        }
+    ]
+}
