@@ -12,6 +12,7 @@ flask-migrate = "*"
 flask-script = "*"
 requests = "*"
 flask-cors = "*"
+pyjwt = "*"
 
 [requires]
 python_version = "3.7"

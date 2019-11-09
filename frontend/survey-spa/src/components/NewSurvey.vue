@@ -108,6 +108,10 @@ export default {
                     questions: this.questions,
                 })
                 .then(() => this.$router.push('/'))
+                .catch((error) => {
+                    console.log('Error creating survey', error)
+                    this.$router.push('/')
+                })
         },
     },
 }
