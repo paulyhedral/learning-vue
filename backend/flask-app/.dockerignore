@@ -1,0 +1,6 @@
+*.pyc
+Pipfile
+*.db
+*.lock
+docker/
+migrations/
