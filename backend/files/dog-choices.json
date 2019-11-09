@@ -1,0 +1,5 @@
+{
+    "id": 1,
+    "name": "Dogs",
+    "questions": [{ "id": 1, "choice": 1 }, { "id": 2, "choice": 5 }]
+}
