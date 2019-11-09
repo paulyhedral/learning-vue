@@ -1,0 +1,64 @@
+version: "3.7"
+
+services:
+  # proxy:
+  #   image: surveys-proxy
+  #   build:
+  #     context: proxy
+  #     dockerfile: docker/Dockerfile
+  #   ports:
+  #     - "80:80"
+  #   environment: []
+  #   networks:
+  #     - surveys
+  #   depends_on:
+  #     - frontend
+  #     - backend
+  web:
+    image: surveys-web
+    build:
+      dockerfile: docker/Dockerfile
+      context: frontend/survey-spa
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://api:5000/
+    networks:
+      - surveys
+    depends_on:
+      - api
+  api:
+    image: surveys-api
+    build:
+      dockerfile: docker/Dockerfile
+      context: backend/flask-app
+    ports:
+      - "5000:5000"
+    environment: []
+    networks:
+      - surveys
+    depends_on:
+      - postgres
+      - redis
+  postgres:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=surveys
+      - POSTGRES_USER=surveys
+      - POSTGRES_PASSWORD=password
+    networks:
+      - surveys
+  # mongo:
+  #   image: mongodb:latest
+  #   environment: []
+  #   networks:
+  #     - surveys
+  redis:
+    image: redis:4
+    environment: []
+    networks:
+      - surveys
+
+networks:
+  surveys:
