@@ -8,11 +8,11 @@ COPY . /app
 
 WORKDIR /app
 RUN pip install -r requirements.txt
-# TODO: remove [start]
-RUN python manage.py db init
-RUN python manage.py db migrate
-# TODO: remove [end]
-RUN python manage.py db upgrade
+# # TODO: remove [start]
+# RUN python manage.py db init
+# RUN python manage.py db migrate
+# # TODO: remove [end]
+# RUN python manage.py db upgrade
 
 USER survey:survey
 EXPOSE 5000

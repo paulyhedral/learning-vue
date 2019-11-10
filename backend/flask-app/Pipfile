@@ -6,14 +6,16 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-flask = "*"
-flask-sqlalchemy = "*"
-flask-migrate = "*"
-flask-script = "*"
 requests = "*"
-flask-cors = "*"
-pyjwt = "*"
-uwsgi = "*"
+psycopg2 = "*"
+Flask = "*"
+Flask-SQLAlchemy = "*"
+Flask-Migrate = "*"
+Flask-Script = "*"
+Flask-Cors = "*"
+PyJWT = "*"
+uWSGI = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

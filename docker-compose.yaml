@@ -33,9 +33,20 @@ services:
     build:
       dockerfile: docker/Dockerfile
       context: backend/flask-app
+      # args:
+      #   - POSTGRES_HOST=postgres
+      #   - POSTGRES_PORT=5432
+      #   - POSTGRES_USER=surveys
+      #   - POSTGRES_PW=password
+      #   - POSTGRES_DB=surveys
     ports:
       - "5000:5000"
-    environment: []
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=surveys
+      - POSTGRES_PW=password
+      - POSTGRES_DB=surveys
     networks:
       - surveys
     depends_on:
@@ -43,6 +54,8 @@ services:
       - redis
   postgres:
     image: postgres:10
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_DB=surveys
       - POSTGRES_USER=surveys
